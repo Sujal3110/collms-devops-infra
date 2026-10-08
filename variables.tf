@@ -36,5 +36,4 @@ variable "app_vpc_cidr" {
 variable "my_ip" {
   description = "Your public IPv4 address for SSH/admin access, in CIDR format"
   type        = string
-  default     = "47.11.10.52/32"
 }

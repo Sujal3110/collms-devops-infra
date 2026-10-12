@@ -35,6 +35,9 @@ resource "aws_instance" "jenkins" {
   tags = {
     Name = "${var.project_name}-jenkins-server"
   }
+  lifecycle {
+    ignore_changes = [user_data]
+  }
 }
 
 output "jenkins_public_ip" {

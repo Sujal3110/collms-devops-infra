@@ -37,3 +37,32 @@ variable "my_ip" {
   description = "Your public IPv4 address for SSH/admin access, in CIDR format"
   type        = string
 }
+variable "node_instance_type" {
+  description = "EC2 size of the EKS worker nodes"
+  type        = string
+  default     = "t3.medium"
+}
+
+variable "node_min_size" {
+  description = "Minimum number of worker nodes"
+  type        = number
+  default     = 1
+}
+
+variable "node_desired_size" {
+  description = "Number of worker nodes to run (one per availability zone)"
+  type        = number
+  default     = 2
+}
+
+variable "node_max_size" {
+  description = "Maximum number of worker nodes"
+  type        = number
+  default     = 3
+}
+
+variable "node_port" {
+  description = "Port on the nodes where the sample app is reachable (NodePort)"
+  type        = number
+  default     = 30080
+}
